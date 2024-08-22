@@ -1,0 +1,1838 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_a65a505915b2c505f12c062af1f46d0b {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_a65a505915b2c505f12c062af1f46d0b" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_a65a505915b2c505f12c062af1f46d0b = L.map(
+                "map_a65a505915b2c505f12c062af1f46d0b",
+                {
+                    center: [50.65453570942645, -120.30424611826452],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 7,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_95c40b7379cf423a90415f95c482899f = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors", "detectRetina": false, "maxNativeZoom": 19, "maxZoom": 19, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            );
+        
+    
+            tile_layer_95c40b7379cf423a90415f95c482899f.addTo(map_a65a505915b2c505f12c062af1f46d0b);
+        
+    
+            var feature_group_c4777257a550f1ac024cd4972b5c0d40 = L.featureGroup(
+                {}
+            );
+        
+    
+            var marker_73709f7fced36eb4028aeb7e238defd2 = L.marker(
+                [51.1639794, -115.5631021],
+                {}
+            ).addTo(feature_group_c4777257a550f1ac024cd4972b5c0d40);
+        
+    
+            var icon_4aee995e7f47f1443707732e847258e2 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "martini-glass", "iconColor": "white", "markerColor": "gray", "prefix": "fa"}
+            );
+            marker_73709f7fced36eb4028aeb7e238defd2.setIcon(icon_4aee995e7f47f1443707732e847258e2);
+        
+    
+        var popup_e5ee7d3dee2ab64bd573597c8cb178e9 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_25c03f6e47d5c515f59d3569a214123c = $(`<div id="html_25c03f6e47d5c515f59d3569a214123c" style="width: 100.0%; height: 100.0%;"><a href="https://www.banff-springs-hotel.com/dine/rundle-patio/">Rundle Patio (Fairmont Banff)</a></div>`)[0];
+                popup_e5ee7d3dee2ab64bd573597c8cb178e9.setContent(html_25c03f6e47d5c515f59d3569a214123c);
+            
+        
+
+        marker_73709f7fced36eb4028aeb7e238defd2.bindPopup(popup_e5ee7d3dee2ab64bd573597c8cb178e9)
+        ;
+
+        
+    
+    
+            marker_73709f7fced36eb4028aeb7e238defd2.bindTooltip(
+                `<div>
+                     Rundle Patio (Fairmont Banff)
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_e111edeb6eaa83dd311babff89ef6dc6 = L.marker(
+                [51.1649463, -115.5664776],
+                {}
+            ).addTo(feature_group_c4777257a550f1ac024cd4972b5c0d40);
+        
+    
+            var icon_d19650256480172be615f729bbfc280d = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bed", "iconColor": "white", "markerColor": "gray", "prefix": "fa"}
+            );
+            marker_e111edeb6eaa83dd311babff89ef6dc6.setIcon(icon_d19650256480172be615f729bbfc280d);
+        
+    
+        var popup_c3a86be5c505cf4da4e46a14c645ae4d = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_91a7431d535a84b0a673c3e59239c320 = $(`<div id="html_91a7431d535a84b0a673c3e59239c320" style="width: 100.0%; height: 100.0%;"><a href="https://maps.app.goo.gl/jtjt5am4QUdbz5bS8">Banff Mountain Suite</a></div>`)[0];
+                popup_c3a86be5c505cf4da4e46a14c645ae4d.setContent(html_91a7431d535a84b0a673c3e59239c320);
+            
+        
+
+        marker_e111edeb6eaa83dd311babff89ef6dc6.bindPopup(popup_c3a86be5c505cf4da4e46a14c645ae4d)
+        ;
+
+        
+    
+    
+            marker_e111edeb6eaa83dd311babff89ef6dc6.bindTooltip(
+                `<div>
+                     Banff Mountain Suite
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_d238c57f055212431b578d6833e7a064 = L.marker(
+                [51.42644910000001, -116.1812834],
+                {}
+            ).addTo(feature_group_c4777257a550f1ac024cd4972b5c0d40);
+        
+    
+            var icon_81d048b2bdeed96337f740804e0946e3 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bed", "iconColor": "white", "markerColor": "gray", "prefix": "fa"}
+            );
+            marker_d238c57f055212431b578d6833e7a064.setIcon(icon_81d048b2bdeed96337f740804e0946e3);
+        
+    
+        var popup_561e2522e20e3b9bdb183f305211e8fe = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_81ae3fccb17ae5479cdb4778417bf828 = $(`<div id="html_81ae3fccb17ae5479cdb4778417bf828" style="width: 100.0%; height: 100.0%;"><a href="https://bookings.posthotel.com/115056?adults=2&children=0&currency=USD&datein=09/13/2024&domain=www.google.com&gclid=CjwKCAiA-bmsBhAGEiwAoaQNmsm1eBRFFX_gP_p1gY7P3lem_6NZbowcPL77DVH0RQDu90Fw6fe6ghoCxOUQAvD_BwE&gdp=hotelfinder&hotelID=115056&languageid=1&nights=4&rateplanID=7238767&roomtypeID=530932&subchan=GOOGLE_US_desktop_CPA&utm_campaign=ds_9090959734&utm_content=HPA_115056_localuniversal_4_US_desktop_2024-09-13_selected_9090959734_705144237_standard&utm_medium=meta&utm_source=googleha#/accommodation/room">Post Hotel & SPA (Lake Louise)</a></div>`)[0];
+                popup_561e2522e20e3b9bdb183f305211e8fe.setContent(html_81ae3fccb17ae5479cdb4778417bf828);
+            
+        
+
+        marker_d238c57f055212431b578d6833e7a064.bindPopup(popup_561e2522e20e3b9bdb183f305211e8fe)
+        ;
+
+        
+    
+    
+            marker_d238c57f055212431b578d6833e7a064.bindTooltip(
+                `<div>
+                     Post Hotel & SPA (Lake Louise)
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_af5c8efc93bece0009fb58ff13072e17 = L.marker(
+                [49.27964890000001, -123.1240905],
+                {}
+            ).addTo(feature_group_c4777257a550f1ac024cd4972b5c0d40);
+        
+    
+            var icon_1f62cd268e9e3aa4e613ce4fb9f384ca = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bed", "iconColor": "white", "markerColor": "gray", "prefix": "fa"}
+            );
+            marker_af5c8efc93bece0009fb58ff13072e17.setIcon(icon_1f62cd268e9e3aa4e613ce4fb9f384ca);
+        
+    
+        var popup_cfc73f11d80c6059cc1dfcf63ad07ae9 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_3bb35d878c0be743a54ff1b3a4613ea1 = $(`<div id="html_3bb35d878c0be743a54ff1b3a4613ea1" style="width: 100.0%; height: 100.0%;"><a href="https://www.airbnb.com/rooms/23125977?source_impression_id=p3_1703880779_qiDn878AIIh4XVA3">Downton Condo in Vancouver</a></div>`)[0];
+                popup_cfc73f11d80c6059cc1dfcf63ad07ae9.setContent(html_3bb35d878c0be743a54ff1b3a4613ea1);
+            
+        
+
+        marker_af5c8efc93bece0009fb58ff13072e17.bindPopup(popup_cfc73f11d80c6059cc1dfcf63ad07ae9)
+        ;
+
+        
+    
+    
+            marker_af5c8efc93bece0009fb58ff13072e17.bindTooltip(
+                `<div>
+                     Downton Condo in Vancouver
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_522f74aefed5ee69373ad2355b3bd9a5 = L.marker(
+                [49.2552214, -123.1154217],
+                {}
+            ).addTo(feature_group_c4777257a550f1ac024cd4972b5c0d40);
+        
+    
+            var icon_8a04da86e2785e7cb14d98a0601cba0b = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "location-dot", "iconColor": "white", "markerColor": "gray", "prefix": "fa"}
+            );
+            marker_522f74aefed5ee69373ad2355b3bd9a5.setIcon(icon_8a04da86e2785e7cb14d98a0601cba0b);
+        
+    
+        var popup_1c8892040413852b290455e39344de64 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_119e342a920135e2ddbba7e8e6962ef2 = $(`<div id="html_119e342a920135e2ddbba7e8e6962ef2" style="width: 100.0%; height: 100.0%;"><a href="https://lemonadeglutenfreebakery.ca">Lemonade Gluten-Free Bakery</a></div>`)[0];
+                popup_1c8892040413852b290455e39344de64.setContent(html_119e342a920135e2ddbba7e8e6962ef2);
+            
+        
+
+        marker_522f74aefed5ee69373ad2355b3bd9a5.bindPopup(popup_1c8892040413852b290455e39344de64)
+        ;
+
+        
+    
+    
+            marker_522f74aefed5ee69373ad2355b3bd9a5.bindTooltip(
+                `<div>
+                     Lemonade Gluten-Free Bakery
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_a69079560df1ce4ac0835876508fd8aa = L.marker(
+                [51.1446887, -115.5749925],
+                {}
+            ).addTo(feature_group_c4777257a550f1ac024cd4972b5c0d40);
+        
+    
+            var icon_fce88f2a034dc28532192226cc8e5a4c = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "martini-glass", "iconColor": "white", "markerColor": "gray", "prefix": "fa"}
+            );
+            marker_a69079560df1ce4ac0835876508fd8aa.setIcon(icon_fce88f2a034dc28532192226cc8e5a4c);
+        
+    
+        var popup_dceceb646ad5037f83004883d7a669f4 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_591177cb04165863312a70651399371d = $(`<div id="html_591177cb04165863312a70651399371d" style="width: 100.0%; height: 100.0%;"><a href="https://www.banffjaspercollection.com/attractions/banff-gondola/dining/peak-patio/#tab_drinks">Banff Peak Patio</a></div>`)[0];
+                popup_dceceb646ad5037f83004883d7a669f4.setContent(html_591177cb04165863312a70651399371d);
+            
+        
+
+        marker_a69079560df1ce4ac0835876508fd8aa.bindPopup(popup_dceceb646ad5037f83004883d7a669f4)
+        ;
+
+        
+    
+    
+            marker_a69079560df1ce4ac0835876508fd8aa.bindTooltip(
+                `<div>
+                     Banff Peak Patio
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_8226991462deb3f6f49aef2665377afb = L.marker(
+                [51.1445519, -115.5749635],
+                {}
+            ).addTo(feature_group_c4777257a550f1ac024cd4972b5c0d40);
+        
+    
+            var icon_dd68a1a9325e0cfa63fd5022d68aa3ac = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "martini-glass", "iconColor": "white", "markerColor": "gray", "prefix": "fa"}
+            );
+            marker_8226991462deb3f6f49aef2665377afb.setIcon(icon_dd68a1a9325e0cfa63fd5022d68aa3ac);
+        
+    
+        var popup_255f95ece4e1eb6d889526e1759dd88a = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_9fe4e268ec4128ba7952df8285f99990 = $(`<div id="html_9fe4e268ec4128ba7952df8285f99990" style="width: 100.0%; height: 100.0%;"><a href="https://www.banffjaspercollection.com/dining/sky-bistro/reserve-a-table/">Banff Sky Bistro</a></div>`)[0];
+                popup_255f95ece4e1eb6d889526e1759dd88a.setContent(html_9fe4e268ec4128ba7952df8285f99990);
+            
+        
+
+        marker_8226991462deb3f6f49aef2665377afb.bindPopup(popup_255f95ece4e1eb6d889526e1759dd88a)
+        ;
+
+        
+    
+    
+            marker_8226991462deb3f6f49aef2665377afb.bindTooltip(
+                `<div>
+                     Banff Sky Bistro
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_b202f5564549b5374e441e8d26922099 = L.marker(
+                [49.2813194, -123.0615232],
+                {}
+            ).addTo(feature_group_c4777257a550f1ac024cd4972b5c0d40);
+        
+    
+            var icon_2c689f892925131dfca66633a1c4e474 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "location-dot", "iconColor": "white", "markerColor": "gray", "prefix": "fa"}
+            );
+            marker_b202f5564549b5374e441e8d26922099.setIcon(icon_2c689f892925131dfca66633a1c4e474);
+        
+    
+        var popup_fb1fa6d6565d07764b69a2c3ba0df9af = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_6e1d94ba692e74cdf380547e508138f6 = $(`<div id="html_6e1d94ba692e74cdf380547e508138f6" style="width: 100.0%; height: 100.0%;"><a href="http://innocenticecream.com">Innocent Ice Cream</a></div>`)[0];
+                popup_fb1fa6d6565d07764b69a2c3ba0df9af.setContent(html_6e1d94ba692e74cdf380547e508138f6);
+            
+        
+
+        marker_b202f5564549b5374e441e8d26922099.bindPopup(popup_fb1fa6d6565d07764b69a2c3ba0df9af)
+        ;
+
+        
+    
+    
+            marker_b202f5564549b5374e441e8d26922099.bindTooltip(
+                `<div>
+                     Innocent Ice Cream
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            feature_group_c4777257a550f1ac024cd4972b5c0d40.addTo(map_a65a505915b2c505f12c062af1f46d0b);
+        
+    
+            var feature_group_0ee3aa613f9edd94a6253b38cd9e6413 = L.featureGroup(
+                {}
+            );
+        
+    
+            var marker_7138a199a671beec2d72e8952ace8b9a = L.marker(
+                [51.1816657, -115.5941434],
+                {}
+            ).addTo(feature_group_0ee3aa613f9edd94a6253b38cd9e6413);
+        
+    
+            var icon_c842e5de93a184c061b60b9ed095f77b = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "person-walking", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
+            );
+            marker_7138a199a671beec2d72e8952ace8b9a.setIcon(icon_c842e5de93a184c061b60b9ed095f77b);
+        
+    
+        var popup_35e3a5ca2c6fd25aa4dc2b10efd65c7a = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_0c5d20579602bf2a88fbd8e6f46b8657 = $(`<div id="html_0c5d20579602bf2a88fbd8e6f46b8657" style="width: 100.0%; height: 100.0%;"><a href="https://maps.app.goo.gl/svjUmipQ14LtpLfz8">Vermilion Lakes</a></div>`)[0];
+                popup_35e3a5ca2c6fd25aa4dc2b10efd65c7a.setContent(html_0c5d20579602bf2a88fbd8e6f46b8657);
+            
+        
+
+        marker_7138a199a671beec2d72e8952ace8b9a.bindPopup(popup_35e3a5ca2c6fd25aa4dc2b10efd65c7a)
+        ;
+
+        
+    
+    
+            marker_7138a199a671beec2d72e8952ace8b9a.bindTooltip(
+                `<div>
+                     Vermilion Lakes
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_e06d81b518705554e1664057dcea415c = L.marker(
+                [49.273376, -123.103834],
+                {}
+            ).addTo(feature_group_0ee3aa613f9edd94a6253b38cd9e6413);
+        
+    
+            var icon_3fdc1b0eee19c300474432b6fc694f40 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "landmark", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
+            );
+            marker_e06d81b518705554e1664057dcea415c.setIcon(icon_3fdc1b0eee19c300474432b6fc694f40);
+        
+    
+        var popup_5710c0e070f78530f33e8eee657508ba = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_92f4705d23b2120fb394dfc4ab268da1 = $(`<div id="html_92f4705d23b2120fb394dfc4ab268da1" style="width: 100.0%; height: 100.0%;"><a href="https://scienceworld.ca/">Science World</a></div>`)[0];
+                popup_5710c0e070f78530f33e8eee657508ba.setContent(html_92f4705d23b2120fb394dfc4ab268da1);
+            
+        
+
+        marker_e06d81b518705554e1664057dcea415c.bindPopup(popup_5710c0e070f78530f33e8eee657508ba)
+        ;
+
+        
+    
+    
+            marker_e06d81b518705554e1664057dcea415c.bindTooltip(
+                `<div>
+                     Science World
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_14ec9ec07bdb9a6071d70b62a365708c = L.marker(
+                [51.3217416, -116.1860049],
+                {}
+            ).addTo(feature_group_0ee3aa613f9edd94a6253b38cd9e6413);
+        
+    
+            var icon_f651bf9f764cdc4f2894c36e81bb9b68 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "person-walking", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
+            );
+            marker_14ec9ec07bdb9a6071d70b62a365708c.setIcon(icon_f651bf9f764cdc4f2894c36e81bb9b68);
+        
+    
+        var popup_0b80e754f54be207aaf1e8f5cd7f5afe = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_97d61141f84c88eb03c51cf79980478a = $(`<div id="html_97d61141f84c88eb03c51cf79980478a" style="width: 100.0%; height: 100.0%;"><a href="https://maps.app.goo.gl/6qeA4Ph1pmsRm4YD9">Moraine Lake</a></div>`)[0];
+                popup_0b80e754f54be207aaf1e8f5cd7f5afe.setContent(html_97d61141f84c88eb03c51cf79980478a);
+            
+        
+
+        marker_14ec9ec07bdb9a6071d70b62a365708c.bindPopup(popup_0b80e754f54be207aaf1e8f5cd7f5afe)
+        ;
+
+        
+    
+    
+            marker_14ec9ec07bdb9a6071d70b62a365708c.bindTooltip(
+                `<div>
+                     Moraine Lake
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_b8ac94033b152193cd4283e1ca069201 = L.marker(
+                [49.37721029999999, -123.0814204],
+                {}
+            ).addTo(feature_group_0ee3aa613f9edd94a6253b38cd9e6413);
+        
+    
+            var icon_9cc499b2b7ccee0c4772cb226532b724 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "person-walking", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
+            );
+            marker_b8ac94033b152193cd4283e1ca069201.setIcon(icon_9cc499b2b7ccee0c4772cb226532b724);
+        
+    
+        var popup_fe93d83f4b34fb6a2bfed469ea8221e0 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_e609784bd500c372a9e8aa586a18e4cb = $(`<div id="html_e609784bd500c372a9e8aa586a18e4cb" style="width: 100.0%; height: 100.0%;"><a href="https://www.google.com/maps/place/search?q=Grouse%20Mountain,+nova+scotia">Grouse Mountain</a></div>`)[0];
+                popup_fe93d83f4b34fb6a2bfed469ea8221e0.setContent(html_e609784bd500c372a9e8aa586a18e4cb);
+            
+        
+
+        marker_b8ac94033b152193cd4283e1ca069201.bindPopup(popup_fe93d83f4b34fb6a2bfed469ea8221e0)
+        ;
+
+        
+    
+    
+            marker_b8ac94033b152193cd4283e1ca069201.bindTooltip(
+                `<div>
+                     Grouse Mountain
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_eb11413be99911e76ebc77933fd5d0b3 = L.marker(
+                [51.3980167, -116.4918483],
+                {}
+            ).addTo(feature_group_0ee3aa613f9edd94a6253b38cd9e6413);
+        
+    
+            var icon_0801b8bb6eb0d9a5abf6d727c0aedfc9 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "person-walking", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
+            );
+            marker_eb11413be99911e76ebc77933fd5d0b3.setIcon(icon_0801b8bb6eb0d9a5abf6d727c0aedfc9);
+        
+    
+        var popup_5f3f22b6bc88e13f360010d209cee9c5 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_551aa8cda85dce416ca9925a93b2488f = $(`<div id="html_551aa8cda85dce416ca9925a93b2488f" style="width: 100.0%; height: 100.0%;"><a href="https://www.pc.gc.ca/en/pn-np/bc/yoho">Yoho National Park Visitor Centre</a></div>`)[0];
+                popup_5f3f22b6bc88e13f360010d209cee9c5.setContent(html_551aa8cda85dce416ca9925a93b2488f);
+            
+        
+
+        marker_eb11413be99911e76ebc77933fd5d0b3.bindPopup(popup_5f3f22b6bc88e13f360010d209cee9c5)
+        ;
+
+        
+    
+    
+            marker_eb11413be99911e76ebc77933fd5d0b3.bindTooltip(
+                `<div>
+                     Yoho National Park Visitor Centre
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_850718d7b4e27f9f317d44c0348497b2 = L.marker(
+                [49.239569, -123.1325406],
+                {}
+            ).addTo(feature_group_0ee3aa613f9edd94a6253b38cd9e6413);
+        
+    
+            var icon_e2774c0b0aea87b3d0dd5a0fe156a82a = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "landmark", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
+            );
+            marker_850718d7b4e27f9f317d44c0348497b2.setIcon(icon_e2774c0b0aea87b3d0dd5a0fe156a82a);
+        
+    
+        var popup_b885e15649fdd392c130e304399737d1 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_fb1d9492dfa2e1309afabef1238abdce = $(`<div id="html_fb1d9492dfa2e1309afabef1238abdce" style="width: 100.0%; height: 100.0%;"><a href="https://vancouver.ca/parks-recreation-culture/vandusen-botanical-garden.aspx">VanDusen Botanical Garden</a></div>`)[0];
+                popup_b885e15649fdd392c130e304399737d1.setContent(html_fb1d9492dfa2e1309afabef1238abdce);
+            
+        
+
+        marker_850718d7b4e27f9f317d44c0348497b2.bindPopup(popup_b885e15649fdd392c130e304399737d1)
+        ;
+
+        
+    
+    
+            marker_850718d7b4e27f9f317d44c0348497b2.bindTooltip(
+                `<div>
+                     VanDusen Botanical Garden
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_bd47f56a5ac2c9cadf2b7ebf6f72246e = L.marker(
+                [49.2797853, -123.1040923],
+                {}
+            ).addTo(feature_group_0ee3aa613f9edd94a6253b38cd9e6413);
+        
+    
+            var icon_8824180b7ae3da45d7f75e6ccfafd2b8 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "landmark", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
+            );
+            marker_bd47f56a5ac2c9cadf2b7ebf6f72246e.setIcon(icon_8824180b7ae3da45d7f75e6ccfafd2b8);
+        
+    
+        var popup_2623d68c35de361cb345b384be4e2db8 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_77afc9e4d4d24be3482ebbae8fe45103 = $(`<div id="html_77afc9e4d4d24be3482ebbae8fe45103" style="width: 100.0%; height: 100.0%;"><a href="https://vancouverchinesegarden.com/">Dr. Sun Yat-Sen Classical Chinese Garden</a></div>`)[0];
+                popup_2623d68c35de361cb345b384be4e2db8.setContent(html_77afc9e4d4d24be3482ebbae8fe45103);
+            
+        
+
+        marker_bd47f56a5ac2c9cadf2b7ebf6f72246e.bindPopup(popup_2623d68c35de361cb345b384be4e2db8)
+        ;
+
+        
+    
+    
+            marker_bd47f56a5ac2c9cadf2b7ebf6f72246e.bindTooltip(
+                `<div>
+                     Dr. Sun Yat-Sen Classical Chinese Garden
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_54ec19d81fa1945ec8b4fadef547457d = L.marker(
+                [51.17137899999999, -115.5717517],
+                {}
+            ).addTo(feature_group_0ee3aa613f9edd94a6253b38cd9e6413);
+        
+    
+            var icon_24cb633f8698a51ee7ff843d3bb045f7 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "person-walking", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
+            );
+            marker_54ec19d81fa1945ec8b4fadef547457d.setIcon(icon_24cb633f8698a51ee7ff843d3bb045f7);
+        
+    
+        var popup_6886b2be4d955f4d68af3d91fef3bfea = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_fd36a68780d66dbd80a43c20d77e9fc7 = $(`<div id="html_fd36a68780d66dbd80a43c20d77e9fc7" style="width: 100.0%; height: 100.0%;"><a href="http://banffandbeyond.com/escape-the-crowds-of-banff-avenue-in-cascade-gardens">Cascade of Time Garden</a></div>`)[0];
+                popup_6886b2be4d955f4d68af3d91fef3bfea.setContent(html_fd36a68780d66dbd80a43c20d77e9fc7);
+            
+        
+
+        marker_54ec19d81fa1945ec8b4fadef547457d.bindPopup(popup_6886b2be4d955f4d68af3d91fef3bfea)
+        ;
+
+        
+    
+    
+            marker_54ec19d81fa1945ec8b4fadef547457d.bindTooltip(
+                `<div>
+                     Cascade of Time Garden
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_daf913bf733af6f548024b2b1b602d8c = L.marker(
+                [48.42195, -123.3830139],
+                {}
+            ).addTo(feature_group_0ee3aa613f9edd94a6253b38cd9e6413);
+        
+    
+            var icon_80445be031c1353f5f95333add9e79f7 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "landmark", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
+            );
+            marker_daf913bf733af6f548024b2b1b602d8c.setIcon(icon_80445be031c1353f5f95333add9e79f7);
+        
+    
+        var popup_e79f27363768973aff727763e312f94f = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_7ef3e1a6bebd2ce99cf3bd8d15dc444c = $(`<div id="html_7ef3e1a6bebd2ce99cf3bd8d15dc444c" style="width: 100.0%; height: 100.0%;"><a href="http://fishermanswharfvictoria.com/">Fisherman's Wharf Park</a></div>`)[0];
+                popup_e79f27363768973aff727763e312f94f.setContent(html_7ef3e1a6bebd2ce99cf3bd8d15dc444c);
+            
+        
+
+        marker_daf913bf733af6f548024b2b1b602d8c.bindPopup(popup_e79f27363768973aff727763e312f94f)
+        ;
+
+        
+    
+    
+            marker_daf913bf733af6f548024b2b1b602d8c.bindTooltip(
+                `<div>
+                     Fisherman's Wharf Park
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_76c984b0c667328397ba8c61a6db2165 = L.marker(
+                [49.2909036, -123.145783],
+                {}
+            ).addTo(feature_group_0ee3aa613f9edd94a6253b38cd9e6413);
+        
+    
+            var icon_34599cb532b1734b834a3fe2ed88b456 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "person-walking", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
+            );
+            marker_76c984b0c667328397ba8c61a6db2165.setIcon(icon_34599cb532b1734b834a3fe2ed88b456);
+        
+    
+        var popup_5b1b5daf7e5138cb79d57ab07c243688 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_e05d400b474f0023e6bb2a69218088bf = $(`<div id="html_e05d400b474f0023e6bb2a69218088bf" style="width: 100.0%; height: 100.0%;"><a href="http://vancouver.ca/parks-recreation-culture/stanley-park.aspx">Stanley Park</a></div>`)[0];
+                popup_5b1b5daf7e5138cb79d57ab07c243688.setContent(html_e05d400b474f0023e6bb2a69218088bf);
+            
+        
+
+        marker_76c984b0c667328397ba8c61a6db2165.bindPopup(popup_5b1b5daf7e5138cb79d57ab07c243688)
+        ;
+
+        
+    
+    
+            marker_76c984b0c667328397ba8c61a6db2165.bindTooltip(
+                `<div>
+                     Stanley Park
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_1effe84d7979dce46a370e3748a59c07 = L.marker(
+                [48.56532499999999, -123.526973],
+                {}
+            ).addTo(feature_group_0ee3aa613f9edd94a6253b38cd9e6413);
+        
+    
+            var icon_c83b7ad579aa13a536dd4d73da162031 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "person-walking", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
+            );
+            marker_1effe84d7979dce46a370e3748a59c07.setIcon(icon_c83b7ad579aa13a536dd4d73da162031);
+        
+    
+        var popup_370b1301950cbeefcaec1a3b08848c7e = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_80f53891db18a103a85e6b21ae9be47c = $(`<div id="html_80f53891db18a103a85e6b21ae9be47c" style="width: 100.0%; height: 100.0%;"><a href="http://www.malahatskywalk.com/">Malahat SkyWalk</a></div>`)[0];
+                popup_370b1301950cbeefcaec1a3b08848c7e.setContent(html_80f53891db18a103a85e6b21ae9be47c);
+            
+        
+
+        marker_1effe84d7979dce46a370e3748a59c07.bindPopup(popup_370b1301950cbeefcaec1a3b08848c7e)
+        ;
+
+        
+    
+    
+            marker_1effe84d7979dce46a370e3748a59c07.bindTooltip(
+                `<div>
+                     Malahat SkyWalk
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_5747c802fa14c7a4e338f986a4d330e1 = L.marker(
+                [51.1479059, -115.555579],
+                {}
+            ).addTo(feature_group_0ee3aa613f9edd94a6253b38cd9e6413);
+        
+    
+            var icon_43d986daa83d33c84c8614354bff1b14 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "person-walking", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
+            );
+            marker_5747c802fa14c7a4e338f986a4d330e1.setIcon(icon_43d986daa83d33c84c8614354bff1b14);
+        
+    
+        var popup_2e037167ca97fb1129cb1b589fc558b1 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_fecbfc44cf3dc200b814557c68017c62 = $(`<div id="html_fecbfc44cf3dc200b814557c68017c62" style="width: 100.0%; height: 100.0%;"><a href="https://www.banffjaspercollection.com/attractions/banff-gondola/experience/faqs/">Banff Gondola</a></div>`)[0];
+                popup_2e037167ca97fb1129cb1b589fc558b1.setContent(html_fecbfc44cf3dc200b814557c68017c62);
+            
+        
+
+        marker_5747c802fa14c7a4e338f986a4d330e1.bindPopup(popup_2e037167ca97fb1129cb1b589fc558b1)
+        ;
+
+        
+    
+    
+            marker_5747c802fa14c7a4e338f986a4d330e1.bindTooltip(
+                `<div>
+                     Banff Gondola
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_d1a107f56d86f73c6cf2b2194301e703 = L.marker(
+                [49.3428609, -123.1149244],
+                {}
+            ).addTo(feature_group_0ee3aa613f9edd94a6253b38cd9e6413);
+        
+    
+            var icon_6c2960577e6122a3b2288a161b467a99 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "person-walking", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
+            );
+            marker_d1a107f56d86f73c6cf2b2194301e703.setIcon(icon_6c2960577e6122a3b2288a161b467a99);
+        
+    
+        var popup_e630ae8ef481469de57cac4915834eb7 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_f445aee704d194e45b204477dec82e68 = $(`<div id="html_f445aee704d194e45b204477dec82e68" style="width: 100.0%; height: 100.0%;"><a href="https://www.capbridge.com/">Capilano Suspension Bridge Park</a></div>`)[0];
+                popup_e630ae8ef481469de57cac4915834eb7.setContent(html_f445aee704d194e45b204477dec82e68);
+            
+        
+
+        marker_d1a107f56d86f73c6cf2b2194301e703.bindPopup(popup_e630ae8ef481469de57cac4915834eb7)
+        ;
+
+        
+    
+    
+            marker_d1a107f56d86f73c6cf2b2194301e703.bindTooltip(
+                `<div>
+                     Capilano Suspension Bridge Park
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_2476efa1f52bf716c16ed1538d087b21 = L.marker(
+                [51.3278255, -116.182256],
+                {}
+            ).addTo(feature_group_0ee3aa613f9edd94a6253b38cd9e6413);
+        
+    
+            var icon_16bcd87b2f2ec45e5e5378aeb5e6e2e1 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "person-walking", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
+            );
+            marker_2476efa1f52bf716c16ed1538d087b21.setIcon(icon_16bcd87b2f2ec45e5e5378aeb5e6e2e1);
+        
+    
+        var popup_35b88d2768ea519859e1eef02c0e1630 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_a0501bbc4fecfb23cacd0e94c5eed8cc = $(`<div id="html_a0501bbc4fecfb23cacd0e94c5eed8cc" style="width: 100.0%; height: 100.0%;"><a href="https://www.google.com/maps/place/search?q=Moraine%20Lake%20Canoeing,+nova+scotia">Moraine Lake Canoeing</a></div>`)[0];
+                popup_35b88d2768ea519859e1eef02c0e1630.setContent(html_a0501bbc4fecfb23cacd0e94c5eed8cc);
+            
+        
+
+        marker_2476efa1f52bf716c16ed1538d087b21.bindPopup(popup_35b88d2768ea519859e1eef02c0e1630)
+        ;
+
+        
+    
+    
+            marker_2476efa1f52bf716c16ed1538d087b21.bindTooltip(
+                `<div>
+                     Moraine Lake Canoeing
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_3f184aa5babd7f8cef47322a68025b93 = L.marker(
+                [50.99898289999999, -118.1995214],
+                {}
+            ).addTo(feature_group_0ee3aa613f9edd94a6253b38cd9e6413);
+        
+    
+            var icon_ba31110a1ee846d02378e5da5ac16e75 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "person-walking", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
+            );
+            marker_3f184aa5babd7f8cef47322a68025b93.setIcon(icon_ba31110a1ee846d02378e5da5ac16e75);
+        
+    
+        var popup_48a4e760633d2f303ef1848eb7a605ce = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_b6571a2a8a3c924fe87e373bd52c60e3 = $(`<div id="html_b6571a2a8a3c924fe87e373bd52c60e3" style="width: 100.0%; height: 100.0%;"><a href="https://www.pc.gc.ca/en/pn-np/bc/glacier">Glacier National Park</a></div>`)[0];
+                popup_48a4e760633d2f303ef1848eb7a605ce.setContent(html_b6571a2a8a3c924fe87e373bd52c60e3);
+            
+        
+
+        marker_3f184aa5babd7f8cef47322a68025b93.bindPopup(popup_48a4e760633d2f303ef1848eb7a605ce)
+        ;
+
+        
+    
+    
+            marker_3f184aa5babd7f8cef47322a68025b93.bindTooltip(
+                `<div>
+                     Glacier National Park
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_385ac14db04caf780d7d366429fa84ae = L.marker(
+                [49.2828082, -123.1066875],
+                {}
+            ).addTo(feature_group_0ee3aa613f9edd94a6253b38cd9e6413);
+        
+    
+            var icon_bed622f204806db849f49d1bbb818539 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "landmark", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
+            );
+            marker_385ac14db04caf780d7d366429fa84ae.setIcon(icon_bed622f204806db849f49d1bbb818539);
+        
+    
+        var popup_4d7ac2a3ad6f28a260d731fada4d6e1d = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_52da542ca8dbc962340679689ec36ef9 = $(`<div id="html_52da542ca8dbc962340679689ec36ef9" style="width: 100.0%; height: 100.0%;"><a href="https://maps.app.goo.gl/D3a9TbuTRynHfENc7">Gastown</a></div>`)[0];
+                popup_4d7ac2a3ad6f28a260d731fada4d6e1d.setContent(html_52da542ca8dbc962340679689ec36ef9);
+            
+        
+
+        marker_385ac14db04caf780d7d366429fa84ae.bindPopup(popup_4d7ac2a3ad6f28a260d731fada4d6e1d)
+        ;
+
+        
+    
+    
+            marker_385ac14db04caf780d7d366429fa84ae.bindTooltip(
+                `<div>
+                     Gastown
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_2d792e1cdbc7af91cd2e069838ff50d9 = L.marker(
+                [51.1690712, -115.5915223],
+                {}
+            ).addTo(feature_group_0ee3aa613f9edd94a6253b38cd9e6413);
+        
+    
+            var icon_41bc6d28eadb5abc31276618406ec036 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "person-walking", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
+            );
+            marker_2d792e1cdbc7af91cd2e069838ff50d9.setIcon(icon_41bc6d28eadb5abc31276618406ec036);
+        
+    
+        var popup_f36c56ac6febc6851de9835474e2c888 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_42abccefe59451ee8053077b22a94ab4 = $(`<div id="html_42abccefe59451ee8053077b22a94ab4" style="width: 100.0%; height: 100.0%;"><a href="https://pc.gc.ca/eng/lhn-nhs/ab/caveandbasin/index?utm_source=gmb&utm_medium=caveandbasin">Cave and Basin National Historic Site</a></div>`)[0];
+                popup_f36c56ac6febc6851de9835474e2c888.setContent(html_42abccefe59451ee8053077b22a94ab4);
+            
+        
+
+        marker_2d792e1cdbc7af91cd2e069838ff50d9.bindPopup(popup_f36c56ac6febc6851de9835474e2c888)
+        ;
+
+        
+    
+    
+            marker_2d792e1cdbc7af91cd2e069838ff50d9.bindTooltip(
+                `<div>
+                     Cave and Basin National Historic Site
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_d4ced90db5ea8b3236a344525936805b = L.marker(
+                [51.1507689, -115.5609915],
+                {}
+            ).addTo(feature_group_0ee3aa613f9edd94a6253b38cd9e6413);
+        
+    
+            var icon_d6520f7803ec1d080682039a5d969641 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "person-walking", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
+            );
+            marker_d4ced90db5ea8b3236a344525936805b.setIcon(icon_d6520f7803ec1d080682039a5d969641);
+        
+    
+        var popup_54ae73829a88bd883b0329fc86a8c681 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_d93f4ddc1602ba1956f406598f3d6136 = $(`<div id="html_d93f4ddc1602ba1956f406598f3d6136" style="width: 100.0%; height: 100.0%;"><a href="https://www.hotsprings.ca/banff">Banff Upper Hot Springs</a></div>`)[0];
+                popup_54ae73829a88bd883b0329fc86a8c681.setContent(html_d93f4ddc1602ba1956f406598f3d6136);
+            
+        
+
+        marker_d4ced90db5ea8b3236a344525936805b.bindPopup(popup_54ae73829a88bd883b0329fc86a8c681)
+        ;
+
+        
+    
+    
+            marker_d4ced90db5ea8b3236a344525936805b.bindTooltip(
+                `<div>
+                     Banff Upper Hot Springs
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_97fcd1a9d656288f76146a2567dc825a = L.marker(
+                [49.27115670000001, -123.133993],
+                {}
+            ).addTo(feature_group_0ee3aa613f9edd94a6253b38cd9e6413);
+        
+    
+            var icon_36029f86531eced4874035f53dbef7cb = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "landmark", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
+            );
+            marker_97fcd1a9d656288f76146a2567dc825a.setIcon(icon_36029f86531eced4874035f53dbef7cb);
+        
+    
+        var popup_b099487ffb2845dd409a84780f5ea757 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_64aafe3b7d4f19c2de54a38841c6ee29 = $(`<div id="html_64aafe3b7d4f19c2de54a38841c6ee29" style="width: 100.0%; height: 100.0%;"><a href="https://maps.app.goo.gl/zZHME4JQ7sKBbvhk7">Granville Island</a></div>`)[0];
+                popup_b099487ffb2845dd409a84780f5ea757.setContent(html_64aafe3b7d4f19c2de54a38841c6ee29);
+            
+        
+
+        marker_97fcd1a9d656288f76146a2567dc825a.bindPopup(popup_b099487ffb2845dd409a84780f5ea757)
+        ;
+
+        
+    
+    
+            marker_97fcd1a9d656288f76146a2567dc825a.bindTooltip(
+                `<div>
+                     Granville Island
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_a0312776a48dc338153b9c66f9798632 = L.marker(
+                [51.4253705, -116.1772552],
+                {}
+            ).addTo(feature_group_0ee3aa613f9edd94a6253b38cd9e6413);
+        
+    
+            var icon_30f4272936e163d4d1dc0cc0fb30345c = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "person-walking", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
+            );
+            marker_a0312776a48dc338153b9c66f9798632.setIcon(icon_30f4272936e163d4d1dc0cc0fb30345c);
+        
+    
+        var popup_789fa61368d45210e30e38ee559b0c12 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_740a2306134cd3791d567bd01924f61d = $(`<div id="html_740a2306134cd3791d567bd01924f61d" style="width: 100.0%; height: 100.0%;"><a href="https://maps.app.goo.gl/mvvwyRF3sw2qFZuB8">Lake Louise</a></div>`)[0];
+                popup_789fa61368d45210e30e38ee559b0c12.setContent(html_740a2306134cd3791d567bd01924f61d);
+            
+        
+
+        marker_a0312776a48dc338153b9c66f9798632.bindPopup(popup_789fa61368d45210e30e38ee559b0c12)
+        ;
+
+        
+    
+    
+            marker_a0312776a48dc338153b9c66f9798632.bindTooltip(
+                `<div>
+                     Lake Louise
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_014ace977be69feb4a74d67772a1a066 = L.marker(
+                [49.1658836, -123.9400648],
+                {}
+            ).addTo(feature_group_0ee3aa613f9edd94a6253b38cd9e6413);
+        
+    
+            var icon_a6d8c4a239214a3c452b82f051356025 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "landmark", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
+            );
+            marker_014ace977be69feb4a74d67772a1a066.setIcon(icon_a6d8c4a239214a3c452b82f051356025);
+        
+    
+        var popup_4a1c935e6d4e0bbac814a4f29f5e6c0a = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_5a0e7fba15fd2f0e6c22896c16612384 = $(`<div id="html_5a0e7fba15fd2f0e6c22896c16612384" style="width: 100.0%; height: 100.0%;"><a href="https://www.google.com/maps/place/search?q=Nanaimo,+nova+scotia">Nanaimo</a></div>`)[0];
+                popup_4a1c935e6d4e0bbac814a4f29f5e6c0a.setContent(html_5a0e7fba15fd2f0e6c22896c16612384);
+            
+        
+
+        marker_014ace977be69feb4a74d67772a1a066.bindPopup(popup_4a1c935e6d4e0bbac814a4f29f5e6c0a)
+        ;
+
+        
+    
+    
+            marker_014ace977be69feb4a74d67772a1a066.bindTooltip(
+                `<div>
+                     Nanaimo
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_0daebba26a832aecfda342baed416710 = L.marker(
+                [48.5635765, -123.4706262],
+                {}
+            ).addTo(feature_group_0ee3aa613f9edd94a6253b38cd9e6413);
+        
+    
+            var icon_ec32926bc1597df16abe798dc77cddcb = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "landmark", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
+            );
+            marker_0daebba26a832aecfda342baed416710.setIcon(icon_ec32926bc1597df16abe798dc77cddcb);
+        
+    
+        var popup_7e7fa1cf0d2b8486eb023e2978c6b563 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_9f0afe28d430950e85d76353219709e4 = $(`<div id="html_9f0afe28d430950e85d76353219709e4" style="width: 100.0%; height: 100.0%;"><a href="https://www.butchartgardens.com/">The Butchart Gardens</a></div>`)[0];
+                popup_7e7fa1cf0d2b8486eb023e2978c6b563.setContent(html_9f0afe28d430950e85d76353219709e4);
+            
+        
+
+        marker_0daebba26a832aecfda342baed416710.bindPopup(popup_7e7fa1cf0d2b8486eb023e2978c6b563)
+        ;
+
+        
+    
+    
+            marker_0daebba26a832aecfda342baed416710.bindTooltip(
+                `<div>
+                     The Butchart Gardens
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_e3bd07a3e526b17aa2e58c311d113296 = L.marker(
+                [49.194577, -123.1305692],
+                {}
+            ).addTo(feature_group_0ee3aa613f9edd94a6253b38cd9e6413);
+        
+    
+            var icon_3ba2a830c64379cfe526bef613604e0e = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "landmark", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
+            );
+            marker_e3bd07a3e526b17aa2e58c311d113296.setIcon(icon_3ba2a830c64379cfe526bef613604e0e);
+        
+    
+        var popup_0920998c3ca7c750111e776b27a76cbe = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_464661016dcefe26315808f2be48e35e = $(`<div id="html_464661016dcefe26315808f2be48e35e" style="width: 100.0%; height: 100.0%;"><a href="http://richmondnightmarket.com/">Richmond Night Market</a></div>`)[0];
+                popup_0920998c3ca7c750111e776b27a76cbe.setContent(html_464661016dcefe26315808f2be48e35e);
+            
+        
+
+        marker_e3bd07a3e526b17aa2e58c311d113296.bindPopup(popup_0920998c3ca7c750111e776b27a76cbe)
+        ;
+
+        
+    
+    
+            marker_e3bd07a3e526b17aa2e58c311d113296.bindTooltip(
+                `<div>
+                     Richmond Night Market
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_76d7eb2e45e4e2aae4940a06efd8a136 = L.marker(
+                [49.2858394, -124.6663036],
+                {}
+            ).addTo(feature_group_0ee3aa613f9edd94a6253b38cd9e6413);
+        
+    
+            var icon_a2b8cb68807988f70c1f67dda4cf2828 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "person-walking", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
+            );
+            marker_76d7eb2e45e4e2aae4940a06efd8a136.setIcon(icon_a2b8cb68807988f70c1f67dda4cf2828);
+        
+    
+        var popup_2e3250615522b960f31ee7052cfecd67 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_9678f74e6009587d1279a3331c506a6a = $(`<div id="html_9678f74e6009587d1279a3331c506a6a" style="width: 100.0%; height: 100.0%;"><a href="https://bcparks.ca/macmillan-park/">MacMillan Provincial Park</a></div>`)[0];
+                popup_2e3250615522b960f31ee7052cfecd67.setContent(html_9678f74e6009587d1279a3331c506a6a);
+            
+        
+
+        marker_76d7eb2e45e4e2aae4940a06efd8a136.bindPopup(popup_2e3250615522b960f31ee7052cfecd67)
+        ;
+
+        
+    
+    
+            marker_76d7eb2e45e4e2aae4940a06efd8a136.bindTooltip(
+                `<div>
+                     MacMillan Provincial Park
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_e65e4c2c9f0baf5c85e454aa3e72e863 = L.marker(
+                [52.2587145, -117.2769247],
+                {}
+            ).addTo(feature_group_0ee3aa613f9edd94a6253b38cd9e6413);
+        
+    
+            var icon_cae092fbfaea46e68b0b12bd830177cc = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "person-walking", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
+            );
+            marker_e65e4c2c9f0baf5c85e454aa3e72e863.setIcon(icon_cae092fbfaea46e68b0b12bd830177cc);
+        
+    
+        var popup_aa6f3c846a72752ab10460dfa104eb4f = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_ced6e366bb27df4a1d8c20823a4198c5 = $(`<div id="html_ced6e366bb27df4a1d8c20823a4198c5" style="width: 100.0%; height: 100.0%;"><a href="https://www.banffjaspercollection.com/attractions/columbia-icefield/skywalk/">Columbia Icefield Skywalk</a></div>`)[0];
+                popup_aa6f3c846a72752ab10460dfa104eb4f.setContent(html_ced6e366bb27df4a1d8c20823a4198c5);
+            
+        
+
+        marker_e65e4c2c9f0baf5c85e454aa3e72e863.bindPopup(popup_aa6f3c846a72752ab10460dfa104eb4f)
+        ;
+
+        
+    
+    
+            marker_e65e4c2c9f0baf5c85e454aa3e72e863.bindTooltip(
+                `<div>
+                     Columbia Icefield Skywalk
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            feature_group_0ee3aa613f9edd94a6253b38cd9e6413.addTo(map_a65a505915b2c505f12c062af1f46d0b);
+        
+    
+            var feature_group_3dabafb42f8a5d7de78ccefa5d37a78a = L.featureGroup(
+                {}
+            );
+        
+    
+            var marker_3dd40d07461f6e2902a5a42ac967b3d3 = L.marker(
+                [49.2797306, -123.0999778],
+                {}
+            ).addTo(feature_group_3dabafb42f8a5d7de78ccefa5d37a78a);
+        
+    
+            var icon_cbc967b3cd6835112f58f4449ba68700 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "utensils", "iconColor": "white", "markerColor": "red", "prefix": "fa"}
+            );
+            marker_3dd40d07461f6e2902a5a42ac967b3d3.setIcon(icon_cbc967b3cd6835112f58f4449ba68700);
+        
+    
+        var popup_d7d985ee1e3949299b2a2e5643e83ad3 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_ed4e668643bdc19f24daec4dab3cbf31 = $(`<div id="html_ed4e668643bdc19f24daec4dab3cbf31" style="width: 100.0%; height: 100.0%;"><a href="https://virtuouspie.com/locations/canada/chinatown/#pizza">Virtuous Pie</a></div>`)[0];
+                popup_d7d985ee1e3949299b2a2e5643e83ad3.setContent(html_ed4e668643bdc19f24daec4dab3cbf31);
+            
+        
+
+        marker_3dd40d07461f6e2902a5a42ac967b3d3.bindPopup(popup_d7d985ee1e3949299b2a2e5643e83ad3)
+        ;
+
+        
+    
+    
+            marker_3dd40d07461f6e2902a5a42ac967b3d3.bindTooltip(
+                `<div>
+                     Virtuous Pie
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_1009a229d7bc079d1eefc045c8ddff1e = L.marker(
+                [49.2683258, -123.1508535],
+                {}
+            ).addTo(feature_group_3dabafb42f8a5d7de78ccefa5d37a78a);
+        
+    
+            var icon_47742c32c11e9393777ab2b5d8056ec3 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "burger", "iconColor": "white", "markerColor": "red", "prefix": "fa"}
+            );
+            marker_1009a229d7bc079d1eefc045c8ddff1e.setIcon(icon_47742c32c11e9393777ab2b5d8056ec3);
+        
+    
+        var popup_1449a4dffb8cbbce57303e9532612361 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_c54f4efd843edb563b13d9a4c4542dc4 = $(`<div id="html_c54f4efd843edb563b13d9a4c4542dc4" style="width: 100.0%; height: 100.0%;"><a href="https://www.gobblevancouver.com/menu">Gobble</a></div>`)[0];
+                popup_1449a4dffb8cbbce57303e9532612361.setContent(html_c54f4efd843edb563b13d9a4c4542dc4);
+            
+        
+
+        marker_1009a229d7bc079d1eefc045c8ddff1e.bindPopup(popup_1449a4dffb8cbbce57303e9532612361)
+        ;
+
+        
+    
+    
+            marker_1009a229d7bc079d1eefc045c8ddff1e.bindTooltip(
+                `<div>
+                     Gobble
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_28ad21759e54235f0b11018d2ca2819b = L.marker(
+                [49.2788946, -123.1219954],
+                {}
+            ).addTo(feature_group_3dabafb42f8a5d7de78ccefa5d37a78a);
+        
+    
+            var icon_f32172c4c2548b37e74abc4a2670fc62 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "utensils", "iconColor": "white", "markerColor": "red", "prefix": "fa"}
+            );
+            marker_28ad21759e54235f0b11018d2ca2819b.setIcon(icon_f32172c4c2548b37e74abc4a2670fc62);
+        
+    
+        var popup_d48bbb2a4fe0215919bc97f9587a28bb = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_272b341c13179b3fa0a43dc613be0a0b = $(`<div id="html_272b341c13179b3fa0a43dc613be0a0b" style="width: 100.0%; height: 100.0%;"><a href="https://heirspears.com/menu/">Heirs Pears</a></div>`)[0];
+                popup_d48bbb2a4fe0215919bc97f9587a28bb.setContent(html_272b341c13179b3fa0a43dc613be0a0b);
+            
+        
+
+        marker_28ad21759e54235f0b11018d2ca2819b.bindPopup(popup_d48bbb2a4fe0215919bc97f9587a28bb)
+        ;
+
+        
+    
+    
+            marker_28ad21759e54235f0b11018d2ca2819b.bindTooltip(
+                `<div>
+                     Heirs Pears
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_1be157d16123dedc111b7fd41c50070c = L.marker(
+                [49.2782768, -123.1219846],
+                {}
+            ).addTo(feature_group_3dabafb42f8a5d7de78ccefa5d37a78a);
+        
+    
+            var icon_51846c751d7b82a12189954e0fe93860 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "mug-hot", "iconColor": "white", "markerColor": "red", "prefix": "fa"}
+            );
+            marker_1be157d16123dedc111b7fd41c50070c.setIcon(icon_51846c751d7b82a12189954e0fe93860);
+        
+    
+        var popup_5163e96ad74b12555441a8b65e5cc95f = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_6e9df7879f70e793b02574ba559e0507 = $(`<div id="html_6e9df7879f70e793b02574ba559e0507" style="width: 100.0%; height: 100.0%;"><a href="https://www.nerowafflebar.com/?utm_source=offline&utm_medium=nerowafflescom&utm_campaign=nerowafflescom_redirect">Nero Waffles</a></div>`)[0];
+                popup_5163e96ad74b12555441a8b65e5cc95f.setContent(html_6e9df7879f70e793b02574ba559e0507);
+            
+        
+
+        marker_1be157d16123dedc111b7fd41c50070c.bindPopup(popup_5163e96ad74b12555441a8b65e5cc95f)
+        ;
+
+        
+    
+    
+            marker_1be157d16123dedc111b7fd41c50070c.bindTooltip(
+                `<div>
+                     Nero Waffles
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_ca851adcf551ad73004d275a107439a7 = L.marker(
+                [49.257304, -123.0904443],
+                {}
+            ).addTo(feature_group_3dabafb42f8a5d7de78ccefa5d37a78a);
+        
+    
+            var icon_a177eeec542d6fc4d9d3ec1c7f1978b7 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "mug-hot", "iconColor": "white", "markerColor": "red", "prefix": "fa"}
+            );
+            marker_ca851adcf551ad73004d275a107439a7.setIcon(icon_a177eeec542d6fc4d9d3ec1c7f1978b7);
+        
+    
+        var popup_8d23aad74277e918f22f6af0ab9b4b2d = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_6b54157f516b0099e0f6cfc3cc53a25e = $(`<div id="html_6b54157f516b0099e0f6cfc3cc53a25e" style="width: 100.0%; height: 100.0%;"><a href="https://www.glutenfreeepicurean.ca/order">Gluten-Free Epicurean</a></div>`)[0];
+                popup_8d23aad74277e918f22f6af0ab9b4b2d.setContent(html_6b54157f516b0099e0f6cfc3cc53a25e);
+            
+        
+
+        marker_ca851adcf551ad73004d275a107439a7.bindPopup(popup_8d23aad74277e918f22f6af0ab9b4b2d)
+        ;
+
+        
+    
+    
+            marker_ca851adcf551ad73004d275a107439a7.bindTooltip(
+                `<div>
+                     Gluten-Free Epicurean
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_057170aa6159e1bdd5ccf18495a8ac5d = L.marker(
+                [49.27260860000001, -123.1485987],
+                {}
+            ).addTo(feature_group_3dabafb42f8a5d7de78ccefa5d37a78a);
+        
+    
+            var icon_10f86b6c485e967bd3dc81c27df5d6e4 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "utensils", "iconColor": "white", "markerColor": "red", "prefix": "fa"}
+            );
+            marker_057170aa6159e1bdd5ccf18495a8ac5d.setIcon(icon_10f86b6c485e967bd3dc81c27df5d6e4);
+        
+    
+        var popup_f39c25c98927b44491bd34e9ee797cfa = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_e0e5d585d7b466cbf196a97bc36de918 = $(`<div id="html_e0e5d585d7b466cbf196a97bc36de918" style="width: 100.0%; height: 100.0%;"><a href="https://www.pannerizo.com/menu">Panne Rizo</a></div>`)[0];
+                popup_f39c25c98927b44491bd34e9ee797cfa.setContent(html_e0e5d585d7b466cbf196a97bc36de918);
+            
+        
+
+        marker_057170aa6159e1bdd5ccf18495a8ac5d.bindPopup(popup_f39c25c98927b44491bd34e9ee797cfa)
+        ;
+
+        
+    
+    
+            marker_057170aa6159e1bdd5ccf18495a8ac5d.bindTooltip(
+                `<div>
+                     Panne Rizo
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_fe5507ed117b75eee7d61617a4f9b942 = L.marker(
+                [51.1638679, -115.5602682],
+                {}
+            ).addTo(feature_group_3dabafb42f8a5d7de78ccefa5d37a78a);
+        
+    
+            var icon_31753683b7bf3c1995a102e673e0206e = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "plate-wheat", "iconColor": "white", "markerColor": "red", "prefix": "fa"}
+            );
+            marker_fe5507ed117b75eee7d61617a4f9b942.setIcon(icon_31753683b7bf3c1995a102e673e0206e);
+        
+    
+        var popup_3a815f8b91eaa32e1258a1a9a29fa6c1 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_37d5f79f004b0ef1ad0d28babc685d1b = $(`<div id="html_37d5f79f004b0ef1ad0d28babc685d1b" style="width: 100.0%; height: 100.0%;"><a href="https://www.banff-springs-hotel.com/dine/the-vermillion-room/">Vermillion Room</a></div>`)[0];
+                popup_3a815f8b91eaa32e1258a1a9a29fa6c1.setContent(html_37d5f79f004b0ef1ad0d28babc685d1b);
+            
+        
+
+        marker_fe5507ed117b75eee7d61617a4f9b942.bindPopup(popup_3a815f8b91eaa32e1258a1a9a29fa6c1)
+        ;
+
+        
+    
+    
+            marker_fe5507ed117b75eee7d61617a4f9b942.bindTooltip(
+                `<div>
+                     Vermillion Room
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_bf74d50761611c8b71cfd95acab2584b = L.marker(
+                [51.1784304, -115.5707903],
+                {}
+            ).addTo(feature_group_3dabafb42f8a5d7de78ccefa5d37a78a);
+        
+    
+            var icon_0bdfb53d809a52fae742bf3a925cf3fc = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "utensils", "iconColor": "white", "markerColor": "red", "prefix": "fa"}
+            );
+            marker_bf74d50761611c8b71cfd95acab2584b.setIcon(icon_0bdfb53d809a52fae742bf3a925cf3fc);
+        
+    
+        var popup_b3d42874c10d32e87d90b5e11aae6220 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_f66ace9b5fc15a25903246468a2c62d8 = $(`<div id="html_f66ace9b5fc15a25903246468a2c62d8" style="width: 100.0%; height: 100.0%;"><a href="https://www.yelp.com/collection/WnS82RihAM9nLw6v7JHkNQ/Banff-NOT-GF-friendly">Banff Not GF</a></div>`)[0];
+                popup_b3d42874c10d32e87d90b5e11aae6220.setContent(html_f66ace9b5fc15a25903246468a2c62d8);
+            
+        
+
+        marker_bf74d50761611c8b71cfd95acab2584b.bindPopup(popup_b3d42874c10d32e87d90b5e11aae6220)
+        ;
+
+        
+    
+    
+            marker_bf74d50761611c8b71cfd95acab2584b.bindTooltip(
+                `<div>
+                     Banff Not GF
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_7272f0301db76f40f50930875a7d9bca = L.marker(
+                [51.4176367, -116.2170072],
+                {}
+            ).addTo(feature_group_3dabafb42f8a5d7de78ccefa5d37a78a);
+        
+    
+            var icon_7637c64a29cc16f0530cb255e19074f2 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "utensils", "iconColor": "white", "markerColor": "red", "prefix": "fa"}
+            );
+            marker_7272f0301db76f40f50930875a7d9bca.setIcon(icon_7637c64a29cc16f0530cb255e19074f2);
+        
+    
+        var popup_180c6eb31207e6ae973cc6cd7efd5769 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_b23b9e9ee4dc4109b4d417ec221e41e3 = $(`<div id="html_b23b9e9ee4dc4109b4d417ec221e41e3" style="width: 100.0%; height: 100.0%;"><a href="https://www.chateau-lake-louise.com/dine/lakeview-lounge/?genid=fa_dining_cll_lakeview_menu&utm_source=fa_dining&utm_medium=paid_referrer&utm_content=cll&utm_campaign=lakeview_menu">Fairmont Lounge</a></div>`)[0];
+                popup_180c6eb31207e6ae973cc6cd7efd5769.setContent(html_b23b9e9ee4dc4109b4d417ec221e41e3);
+            
+        
+
+        marker_7272f0301db76f40f50930875a7d9bca.bindPopup(popup_180c6eb31207e6ae973cc6cd7efd5769)
+        ;
+
+        
+    
+    
+            marker_7272f0301db76f40f50930875a7d9bca.bindTooltip(
+                `<div>
+                     Fairmont Lounge
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_8fc797363cd12cafacb2aee373b51b3a = L.marker(
+                [49.2895929, -123.1181771],
+                {}
+            ).addTo(feature_group_3dabafb42f8a5d7de78ccefa5d37a78a);
+        
+    
+            var icon_5b8c67036dd95610f4e56207e33a9547 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "utensils", "iconColor": "white", "markerColor": "red", "prefix": "fa"}
+            );
+            marker_8fc797363cd12cafacb2aee373b51b3a.setIcon(icon_5b8c67036dd95610f4e56207e33a9547);
+        
+    
+        var popup_9821dc2e5a1e78aea62d0b955a648960 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_b4ffe4249f42e5dc72bd22b7cba77c30 = $(`<div id="html_b4ffe4249f42e5dc72bd22b7cba77c30" style="width: 100.0%; height: 100.0%;"><a href="https://www.cactusclubcafe.com/locations/coal-harbour/menu/drink/">Cactus Club Cafe (Coal Harbor)</a></div>`)[0];
+                popup_9821dc2e5a1e78aea62d0b955a648960.setContent(html_b4ffe4249f42e5dc72bd22b7cba77c30);
+            
+        
+
+        marker_8fc797363cd12cafacb2aee373b51b3a.bindPopup(popup_9821dc2e5a1e78aea62d0b955a648960)
+        ;
+
+        
+    
+    
+            marker_8fc797363cd12cafacb2aee373b51b3a.bindTooltip(
+                `<div>
+                     Cactus Club Cafe (Coal Harbor)
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_92f2de66e77a807662851dd77406b214 = L.marker(
+                [51.1784304, -115.5707903],
+                {}
+            ).addTo(feature_group_3dabafb42f8a5d7de78ccefa5d37a78a);
+        
+    
+            var icon_4780b560e195db8e0ba1dc232584c794 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "utensils", "iconColor": "white", "markerColor": "red", "prefix": "fa"}
+            );
+            marker_92f2de66e77a807662851dd77406b214.setIcon(icon_4780b560e195db8e0ba1dc232584c794);
+        
+    
+        var popup_9a0cf15a386fe9be4f6a41ca0916a01b = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_9c1731b11f4a4b9b7ca4759ca68e632f = $(`<div id="html_9c1731b11f4a4b9b7ca4759ca68e632f" style="width: 100.0%; height: 100.0%;"><a href="https://www.yelp.com/collection/QeWeQ2F-xLEySSOwP1vfFA/Banff-GF-friendly">Banff GF</a></div>`)[0];
+                popup_9a0cf15a386fe9be4f6a41ca0916a01b.setContent(html_9c1731b11f4a4b9b7ca4759ca68e632f);
+            
+        
+
+        marker_92f2de66e77a807662851dd77406b214.bindPopup(popup_9a0cf15a386fe9be4f6a41ca0916a01b)
+        ;
+
+        
+    
+    
+            marker_92f2de66e77a807662851dd77406b214.bindTooltip(
+                `<div>
+                     Banff GF
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_f98bcf7e91ce0df751c60d419014ec40 = L.marker(
+                [49.2831408, -123.1049301],
+                {}
+            ).addTo(feature_group_3dabafb42f8a5d7de78ccefa5d37a78a);
+        
+    
+            var icon_b8c2959e3eda7dbae9ed94dcc39f6160 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "utensils", "iconColor": "white", "markerColor": "red", "prefix": "fa"}
+            );
+            marker_f98bcf7e91ce0df751c60d419014ec40.setIcon(icon_b8c2959e3eda7dbae9ed94dcc39f6160);
+        
+    
+        var popup_daec946e1da31609d8213130f4c0c06f = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_0859d304becaa2ac1f5bc098fcfe9011 = $(`<div id="html_0859d304becaa2ac1f5bc098fcfe9011" style="width: 100.0%; height: 100.0%;"><a href="https://eatmeet.ca/gastown/">MeeT (Gastown)</a></div>`)[0];
+                popup_daec946e1da31609d8213130f4c0c06f.setContent(html_0859d304becaa2ac1f5bc098fcfe9011);
+            
+        
+
+        marker_f98bcf7e91ce0df751c60d419014ec40.bindPopup(popup_daec946e1da31609d8213130f4c0c06f)
+        ;
+
+        
+    
+    
+            marker_f98bcf7e91ce0df751c60d419014ec40.bindTooltip(
+                `<div>
+                     MeeT (Gastown)
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_ad28d3adfd6876513eea9b64ff245f66 = L.marker(
+                [49.2827642, -123.1096344],
+                {}
+            ).addTo(feature_group_3dabafb42f8a5d7de78ccefa5d37a78a);
+        
+    
+            var icon_c413f4850dd7e7d9a30fab0b5fa168ef = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "utensils", "iconColor": "white", "markerColor": "red", "prefix": "fa"}
+            );
+            marker_ad28d3adfd6876513eea9b64ff245f66.setIcon(icon_c413f4850dd7e7d9a30fab0b5fa168ef);
+        
+    
+        var popup_9d65eaf9c4f92b72952b5a04fe015829 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_7c169415b6199759b0ac3ddcde75d72c = $(`<div id="html_7c169415b6199759b0ac3ddcde75d72c" style="width: 100.0%; height: 100.0%;"><a href="https://www.nuba.ca/gastown">Nuba (Gastown)</a></div>`)[0];
+                popup_9d65eaf9c4f92b72952b5a04fe015829.setContent(html_7c169415b6199759b0ac3ddcde75d72c);
+            
+        
+
+        marker_ad28d3adfd6876513eea9b64ff245f66.bindPopup(popup_9d65eaf9c4f92b72952b5a04fe015829)
+        ;
+
+        
+    
+    
+            marker_ad28d3adfd6876513eea9b64ff245f66.bindTooltip(
+                `<div>
+                     Nuba (Gastown)
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            feature_group_3dabafb42f8a5d7de78ccefa5d37a78a.addTo(map_a65a505915b2c505f12c062af1f46d0b);
+        
+    
+            var feature_group_6140cb32ba1f491613b9fa5cd8c595e5 = L.featureGroup(
+                {}
+            );
+        
+    
+            var marker_8a725eeead768610dc220fd7ce57364d = L.marker(
+                [49.2824257, -123.1111724],
+                {}
+            ).addTo(feature_group_6140cb32ba1f491613b9fa5cd8c595e5);
+        
+    
+            var icon_4fde01b262d8e85be882433773d9f383 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "martini-glass", "iconColor": "white", "markerColor": "purple", "prefix": "fa"}
+            );
+            marker_8a725eeead768610dc220fd7ce57364d.setIcon(icon_4fde01b262d8e85be882433773d9f383);
+        
+    
+        var popup_c96dc44643f1b03f5daf14b212906473 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_171a4373c663c750a86a48669575663f = $(`<div id="html_171a4373c663c750a86a48669575663f" style="width: 100.0%; height: 100.0%;"><a href="https://themagnet.ca/cocktails/">The Magnet</a></div>`)[0];
+                popup_c96dc44643f1b03f5daf14b212906473.setContent(html_171a4373c663c750a86a48669575663f);
+            
+        
+
+        marker_8a725eeead768610dc220fd7ce57364d.bindPopup(popup_c96dc44643f1b03f5daf14b212906473)
+        ;
+
+        
+    
+    
+            marker_8a725eeead768610dc220fd7ce57364d.bindTooltip(
+                `<div>
+                     The Magnet
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_3d9023d31c19b86a2304cd08b54a6f22 = L.marker(
+                [49.2902311, -123.131793],
+                {}
+            ).addTo(feature_group_6140cb32ba1f491613b9fa5cd8c595e5);
+        
+    
+            var icon_c43e1abdddd25017d679dc8c5053a191 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "martini-glass", "iconColor": "white", "markerColor": "purple", "prefix": "fa"}
+            );
+            marker_3d9023d31c19b86a2304cd08b54a6f22.setIcon(icon_c43e1abdddd25017d679dc8c5053a191);
+        
+    
+        var popup_20f6832ff7c1f02d8f7f3c55086fd22e = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_053646f0a51ea132ac888db48a72235f = $(`<div id="html_053646f0a51ea132ac888db48a72235f" style="width: 100.0%; height: 100.0%;"><a href="https://www.theredaccordion.com/cocktailsandspirits">The Red Accordion</a></div>`)[0];
+                popup_20f6832ff7c1f02d8f7f3c55086fd22e.setContent(html_053646f0a51ea132ac888db48a72235f);
+            
+        
+
+        marker_3d9023d31c19b86a2304cd08b54a6f22.bindPopup(popup_20f6832ff7c1f02d8f7f3c55086fd22e)
+        ;
+
+        
+    
+    
+            marker_3d9023d31c19b86a2304cd08b54a6f22.bindTooltip(
+                `<div>
+                     The Red Accordion
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_75bfe4b05d36defa48e7421d6687d0a9 = L.marker(
+                [49.2786079, -123.1141059],
+                {}
+            ).addTo(feature_group_6140cb32ba1f491613b9fa5cd8c595e5);
+        
+    
+            var icon_78d405a7ca1c33b3d1483dbeeb41bf11 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "martini-glass", "iconColor": "white", "markerColor": "purple", "prefix": "fa"}
+            );
+            marker_75bfe4b05d36defa48e7421d6687d0a9.setIcon(icon_78d405a7ca1c33b3d1483dbeeb41bf11);
+        
+    
+        var popup_ef81f650c49a9a6a37de895a3d621d85 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_9bf7769531321f165990ac97274d8247 = $(`<div id="html_9bf7769531321f165990ac97274d8247" style="width: 100.0%; height: 100.0%;"><a href="http://fannybayoysters.com/uploads/pdf/fbob-online-menu-2024-master-1.pdf">Fanny Boy Oysters</a></div>`)[0];
+                popup_ef81f650c49a9a6a37de895a3d621d85.setContent(html_9bf7769531321f165990ac97274d8247);
+            
+        
+
+        marker_75bfe4b05d36defa48e7421d6687d0a9.bindPopup(popup_ef81f650c49a9a6a37de895a3d621d85)
+        ;
+
+        
+    
+    
+            marker_75bfe4b05d36defa48e7421d6687d0a9.bindTooltip(
+                `<div>
+                     Fanny Boy Oysters
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            feature_group_6140cb32ba1f491613b9fa5cd8c595e5.addTo(map_a65a505915b2c505f12c062af1f46d0b);
+        
+    
+            var layer_control_b856f79116c2d18de2c82020dfcd1bbf_layers = {
+                base_layers : {
+                    "openstreetmap" : tile_layer_95c40b7379cf423a90415f95c482899f,
+                },
+                overlays :  {
+                    "Base" : feature_group_c4777257a550f1ac024cd4972b5c0d40,
+                    "Activities" : feature_group_0ee3aa613f9edd94a6253b38cd9e6413,
+                    "Dining" : feature_group_3dabafb42f8a5d7de78ccefa5d37a78a,
+                    "Drinks" : feature_group_6140cb32ba1f491613b9fa5cd8c595e5,
+                },
+            };
+            let layer_control_b856f79116c2d18de2c82020dfcd1bbf = L.control.layers(
+                layer_control_b856f79116c2d18de2c82020dfcd1bbf_layers.base_layers,
+                layer_control_b856f79116c2d18de2c82020dfcd1bbf_layers.overlays,
+                {"autoZIndex": true, "collapsed": true, "position": "topright"}
+            ).addTo(map_a65a505915b2c505f12c062af1f46d0b);
+
+        
+</script>
+</html>

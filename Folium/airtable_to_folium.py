@@ -37,7 +37,7 @@ icon_map = {
 # geolocator = Nominatim(user_agent="airtable_to_folium")
 
 # Step 2: Create a map centered at the location
-map_ = folium.Map(location=[49.239569, -123.1325406], zoom_start=8)
+map_ = folium.Map(location=[50.65453570942645, -120.30424611826452], zoom_start=7)
 
 base = folium.FeatureGroup(name='Base')
 dining = folium.FeatureGroup(name='Dining')
