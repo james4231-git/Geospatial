@@ -27,11 +27,14 @@ icon_map = {
     "Dinner": ['plate-wheat'],
     "Lunch": ['burger'],
     "Breakfast/Coffee": ['mug-hot'],
-    "Dining": ['utensils'],
+    "Dessert": ['ice-cream'],
+    "Dining": ['utensils'],''
     "Drinks": ['martini-glass'],
     "Bars": ['martini-glass'],
     "Winery": ['wine-bottle'],
     "Brewery": ['beer-mug'],
+    "Travel": ['van-shuttle'],
+    "Generic": ['location-dot']
 }
 
 # geolocator = Nominatim(user_agent="airtable_to_folium")
@@ -43,6 +46,7 @@ base = folium.FeatureGroup(name='Base')
 dining = folium.FeatureGroup(name='Dining')
 drinks = folium.FeatureGroup(name='Drinks')
 activities = folium.FeatureGroup(name='Activities')
+travel = folium.FeatureGroup(name='Travel')
 
 for record in records:
 
@@ -52,9 +56,11 @@ for record in records:
     # location = geolocator.geocode(fields['Address'])
     name = fields['Item']
     location_type = fields['Type']  # Example type
-    if type in ['Costs', 'Travel']:
-        # don't map these types
-        # print("Skipping %s of type %s" % (fields['Item'], type))
+    # Step 4: Add a marker with a custom icon and a link
+    try:
+        icon = icon_map[location_type]
+    except KeyError:
+        print('Not plotting %s %s' % (location_type, name))
         continue
 
     try:
@@ -63,7 +69,7 @@ for record in records:
         # Split the string into latitude and longitude
         latitude, longitude = map(float, coordinates.split(','))
     except KeyError:
-        print("Couldn't find %s" % (name))
+        print("No coordinates for %s" % (name))
         continue
 
     try:
@@ -74,11 +80,6 @@ for record in records:
     # Step 3: Define the location type and corresponding icon
     popup = '<a href="%s">%s</a>' % (href, name)
 
-    # Step 4: Add a marker with a custom icon and a link
-    try:
-        icon = icon_map[location_type]
-    except KeyError:
-        icon = ['location-dot']
     group = base
     icon_color = 'gray'
     if location_type in ['Activity', 'Attraction']:
@@ -90,6 +91,9 @@ for record in records:
     if location_type in ['Bars', 'Winery', 'Brewery']:
         group = drinks
         icon_color = 'purple'
+    if location_type in ['Travel']:
+        group = travel
+        icon_color = 'darkgreen'
     group.add_child(
         folium.Marker(
             [latitude, longitude],
@@ -102,6 +106,7 @@ map_.add_child(base)
 map_.add_child(activities)
 map_.add_child(dining)
 map_.add_child(drinks)
+map_.add_child(travel)
 
 # Step 5: Add layer control to toggle the feature groups
 folium.LayerControl().add_to(map_)
