@@ -73,12 +73,20 @@ for record in records:
         continue
 
     try:
-        href = fields['URL']
+        site_url = fields['URL']
     except KeyError:
-        href = fields['Google Search']
+        site_url = fields['Google Search']
+
+    try:
+        map_url = fields['Map URL']
+    except KeyError:
+        map_url = fields['Google Maps Query']
 
     # Step 3: Define the location type and corresponding icon
-    popup = '<a href="%s">%s</a>' % (href, name)
+    popup = (('<a href="%s" target="_blank">Site</a>'
+             '<br>'
+             '<a href="%s" target="_blank">Directions</a>')
+             % (site_url, map_url))
 
     group = base
     icon_color = 'gray'
