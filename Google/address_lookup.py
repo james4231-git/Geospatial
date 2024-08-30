@@ -32,24 +32,7 @@ def getPlaceJson(description):
             print(candidate)
         return None
 
-if __name__ == '__main__':
-
-    with open('../my_credentials.json') as f:
-        credentials = json.loads(f.read())
-
-    baseId = credentials['base']
-    key = credentials["key"]
-    Google_API_key = credentials['Google_API_Key']
-
-    # Get base
-    # base = Airtable(baseId, key)
-    # table = 'Vancouver & Banff'
-    # records = base.get(table)
-    api = Api(key)
-    base = api.base(baseId)
-    table = base.table('Vancouver & Banff')
-    records = table.all()
-
+def process_table(records):
     test_count = 10
     idx = 0
     for record in records:
@@ -109,3 +92,37 @@ if __name__ == '__main__':
                 break
         if idx > test_count:
             break
+
+# Function to get the BaseID by base name
+def get_base_id_by_name(bases, base_name):
+    for base in bases:
+        if base.name == base_name:
+            return base.id
+    return None
+
+def get_records(base_name, table_name):
+    bases = api.bases()
+    baseId = get_base_id_by_name(bases, base_name)
+    base = api.base(baseId)
+    table = base.table(table_name)
+    records = table.all()
+    return records
+
+if __name__ == '__main__':
+
+    with open('../my_credentials.json') as f:
+        credentials = json.loads(f.read())
+
+    # baseId = credentials['base']
+    key = credentials["key"]
+    Google_API_key = credentials['Google_API_Key']
+
+    # Get base
+    # base = Airtable(baseId, key)
+    base = 'Travel' #"James' Cheat Sheet"
+    table = 'Vancouver & Banff'
+    # records = base.get(table)
+    api = Api(key)
+    records = get_records(base,table)
+
+    process_table(records)
