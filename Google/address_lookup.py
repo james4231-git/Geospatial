@@ -2,19 +2,24 @@ from pyairtable import Api
 import requests
 import json
 import urllib.parse
+import argparse
 
 debug = True
 
-import json
-from pyairtable import Api
+with open('../my_credentials.json') as f:
+    credentials = json.loads(f.read())
+
+# baseId = credentials['base']
+key = credentials["key"]
+Google_API_key = credentials['Google_API_Key']
 
 def getPlaceJson(description):
 
-    fields = '&fields=formatted_address%2Cname%2Crating%2Copening_hours%2Cgeometry%2Cplace_id'
+    query_fields = '&fields=formatted_address%2Cname%2Crating%2Copening_hours%2Cgeometry%2Cplace_id'
     url = 'https://maps.googleapis.com/maps/api/place/findplacefromtext/json' + \
           '?input=' + description + \
           '&inputtype=textquery' + \
-          fields +\
+          query_fields +\
           '&key=' + Google_API_key
 
     response = requests.request("GET", url)
@@ -32,11 +37,18 @@ def getPlaceJson(description):
             print(candidate)
         return None
 
-def process_table(records):
+def process_table(base,table_name,field_name):
+    table = base.table(table_name)
+    records = table.all()
+
     test_count = 10
     idx = 0
     for record in records:
         fields = record['fields']
+
+        print("Processing %s" %(fields['Name']))
+
+        # Calculate airtable calculated field describing the record (e.g. name, town)
         Place_API_Encoding = fields['Place API Encoding']
 
         try:
@@ -53,8 +65,8 @@ def process_table(records):
 
         # if Address isn't found (KeyError), retrieve data using the Google Place API
         try:
-            # address = fields['Address']
-            coordinates = fields['Coordinates']
+            address = fields['Address']
+            # coordinates = fields['Coordinates']
             # print('%s address found: %s' % (fields['Item'], fields['Address']))
         except (KeyError):
             place_json = getPlaceJson(Place_API_Encoding)
@@ -66,7 +78,7 @@ def process_table(records):
                 longitude = location['lng']
                 coordinates = ('%s, %s' % (latitude, longitude))
                 # print('Updating %s address: %s' % (fields['Item'], address))
-                print('Updating %s address: %s' % (fields['Item'], coordinates))
+                print('Updating %s address: %s' % (fields[field_name], coordinates))
                 table.update(record['id'],
                             {
                                 'Place API JSON': str(place_json),
@@ -84,7 +96,7 @@ def process_table(records):
             place_json = getPlaceJson(urllib.parse.quote_plus(address))
             if place_json:
                 # fields['Place API JSON'] = place_json
-                print('Updating %s place json: %s' % (fields['Item'], str(place_json)))
+                print('Updating %s place json: %s' % (fields[field_name], str(place_json)))
                 table.update(record['id'],
                             {'Place API JSON': str(place_json)}
                             )
@@ -100,29 +112,34 @@ def get_base_id_by_name(bases, base_name):
             return base.id
     return None
 
-def get_records(base_name, table_name):
+def main():
+
+    base_name= 'Travel'  # "James' Cheat Sheet"
+    table_name = 'Vancouver & Banff'
+    field_name = 'Item'
+
+    # Initialize the argument parser
+    parser = argparse.ArgumentParser(description="Retrieve records from a specified Airtable base and table.")
+
+    # Adding optional arguments with default values defined in the entry point
+    parser.add_argument("--Base", type=str, help="The name of the Airtable base")
+    parser.add_argument("--Table", type=str, help="The name of the table in the Airtable base")
+    parser.add_argument("--Field", type=str, help="The name of the primary field in the Airtable table")
+
+    args = parser.parse_args()
+
+    print(args.Base)
+
+    if args.Base and args.Table:
+        base_name = args.Base
+        table_name = args.Table
+        field_name = args.Field
+
+    api = Api(key)
     bases = api.bases()
     baseId = get_base_id_by_name(bases, base_name)
     base = api.base(baseId)
-    table = base.table(table_name)
-    records = table.all()
-    return records
+    process_table(base, table_name, field_name)
 
-if __name__ == '__main__':
-
-    with open('../my_credentials.json') as f:
-        credentials = json.loads(f.read())
-
-    # baseId = credentials['base']
-    key = credentials["key"]
-    Google_API_key = credentials['Google_API_Key']
-
-    # Get base
-    # base = Airtable(baseId, key)
-    base = 'Travel' #"James' Cheat Sheet"
-    table = 'Vancouver & Banff'
-    # records = base.get(table)
-    api = Api(key)
-    records = get_records(base,table)
-
-    process_table(records)
+if __name__ == "__main__":
+    main()
