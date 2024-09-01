@@ -18,21 +18,34 @@ key = credentials["key"]
 api = Api(key)
 base = api.base(baseId)
 table = base.table('Vancouver & Banff')
+field_name = 'Item'
+# base = api.base('appcwp93vMIxZ6It8')
+# table = base.table('Ideas')
+# field_name = 'Name'
 records = table.all()
 
 icon_map = {
     "Lodging": ['bed'],
+    "Place To Stay": ['bed'],
     "Activity": ['person-walking'],
+    "Things To Do": ['person-walking'],
+    "Biking": ['person-walking'],
+    "Hiking": ['person-walking'],
     "Attraction": ['landmark'],
     "Dinner": ['plate-wheat'],
     "Lunch": ['burger'],
     "Breakfast/Coffee": ['mug-hot'],
+    "Coffee/Bakery": ['mug-hot'],
     "Dessert": ['ice-cream'],
-    "Dining": ['utensils'],''
+    "Dining": ['utensils'],
+    "Restaurant": ['utensils'],
     "Drinks": ['martini-glass'],
     "Bars": ['martini-glass'],
+    "Bar": ['martini-glass'],
+    "Distillery": ['martini-glass'],
     "Winery": ['wine-bottle'],
     "Brewery": ['beer-mug'],
+    "GF Brewery": ['beer-mug'],
     "Travel": ['van-shuttle'],
     "Generic": ['location-dot']
 }
@@ -54,8 +67,8 @@ for record in records:
 
     # Step 1: Geocode the address to get latitude and longitude
     # location = geolocator.geocode(fields['Address'])
-    name = fields['Item']
-    location_type = fields['Type']  # Example type
+    name = fields[field_name]
+    location_type = fields['Type']#[0]  # Example type
     # Step 4: Add a marker with a custom icon and a link
     try:
         icon = icon_map[location_type]
@@ -82,15 +95,19 @@ for record in records:
     except KeyError:
         map_url = fields['Google Maps Query']
 
+    record_url  = fields['Record URL']
+
     # Step 3: Define the location type and corresponding icon
     popup = (('<a href="%s" target="_blank">Site</a>'
              '<br>'
-             '<a href="%s" target="_blank">Directions</a>')
-             % (site_url, map_url))
+             '<a href="%s" target="_blank">Directions</a>'
+              '<br>'
+              '<a href="%s" target="_blank">Record</a>')
+             % (site_url, map_url, record_url))
 
     group = base
     icon_color = 'gray'
-    if location_type in ['Activity', 'Attraction']:
+    if location_type in ['Activity', 'Attraction', 'Things To Do']:
         group = activities
         icon_color = 'blue'
     if location_type in ['Dinner', 'Lunch', 'Breakfast/Coffee', 'Dining']:

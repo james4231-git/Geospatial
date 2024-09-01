@@ -5,6 +5,7 @@ import urllib.parse
 import argparse
 
 debug = True
+test_count = 20
 
 with open('../my_credentials.json') as f:
     credentials = json.loads(f.read())
@@ -41,12 +42,11 @@ def process_table(base,table_name,field_name):
     table = base.table(table_name)
     records = table.all()
 
-    test_count = 10
     idx = 0
     for record in records:
         fields = record['fields']
 
-        print("Processing %s" %(fields['Name']))
+        print("Processing %s" %(fields[field_name]))
 
         # Calculate airtable calculated field describing the record (e.g. name, town)
         Place_API_Encoding = fields['Place API Encoding']
@@ -58,15 +58,15 @@ def process_table(base,table_name,field_name):
         except(KeyError):
             continue
 
-        if type in ['Costs']:
+        if type[0] in ['Costs', 'Gift Idea']:
             #don't map these types
-            print("Skipping %s of type %s" % (fields['Item'], type))
+            print("Skipping %s of type %s" % (fields[field_name], type))
             continue
 
         # if Address isn't found (KeyError), retrieve data using the Google Place API
         try:
-            address = fields['Address']
-            # coordinates = fields['Coordinates']
+            # address = fields['Address']
+            coordinates = fields['Coordinates']
             # print('%s address found: %s' % (fields['Item'], fields['Address']))
         except (KeyError):
             place_json = getPlaceJson(Place_API_Encoding)
