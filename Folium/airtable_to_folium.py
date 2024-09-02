@@ -68,7 +68,7 @@ for record in records:
     # Step 1: Geocode the address to get latitude and longitude
     # location = geolocator.geocode(fields['Address'])
     name = fields[field_name]
-    location_type = fields['Type']#[0]  # Example type
+    location_type = fields['Type'] # Example type
     # Step 4: Add a marker with a custom icon and a link
     try:
         icon = icon_map[location_type]
@@ -107,7 +107,7 @@ for record in records:
 
     group = base
     icon_color = 'gray'
-    if location_type in ['Activity', 'Attraction', 'Things To Do']:
+    if location_type in ['Activity', 'Attraction', 'Things To Do','Hiking']:
         group = activities
         icon_color = 'blue'
     if location_type in ['Dinner', 'Lunch', 'Breakfast/Coffee', 'Dining']:

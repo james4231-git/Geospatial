@@ -4,7 +4,7 @@ import json
 import urllib.parse
 import argparse
 
-debug = True
+debug = False
 test_count = 20
 
 with open('../my_credentials.json') as f:
@@ -46,7 +46,8 @@ def process_table(base,table_name,field_name):
     for record in records:
         fields = record['fields']
 
-        print("Processing %s" %(fields[field_name]))
+        if debug:
+            print("Processing %s" %(fields[field_name]))
 
         # Calculate airtable calculated field describing the record (e.g. name, town)
         Place_API_Encoding = fields['Place API Encoding']
@@ -58,17 +59,37 @@ def process_table(base,table_name,field_name):
         except(KeyError):
             continue
 
-        if type[0] in ['Costs', 'Gift Idea']:
+        if type in ['Costs', 'Gift Idea']:
             #don't map these types
-            print("Skipping %s of type %s" % (fields[field_name], type))
+            if debug:
+                print("Skipping %s of type %s" % (fields[field_name], type))
             continue
 
         # if Address isn't found (KeyError), retrieve data using the Google Place API
+        missing_address = False
+        missing_coords = False
+        missing_JSON = False
         try:
-            # address = fields['Address']
-            coordinates = fields['Coordinates']
-            # print('%s address found: %s' % (fields['Item'], fields['Address']))
+            address = fields['Address']
         except (KeyError):
+            missing_address = True
+        try:
+            coordinates = fields['Coordinates']
+        except (KeyError):
+            missing_coords = True
+            # if Place API JSON isn't found, use the address to look it up
+        try:
+            fields['Place API JSON']
+        except (KeyError):
+            missing_JSON = True
+
+        if missing_address or missing_coords or missing_JSON:
+            print("Looking up %s" %(fields[field_name]))
+
+            if not missing_address:
+                #use the address that has been provided
+                Place_API_Encoding = urllib.parse.quote_plus(address)
+
             place_json = getPlaceJson(Place_API_Encoding)
             if place_json:
                 # fields['Place API JSON'] = place_json
@@ -89,19 +110,20 @@ def process_table(base,table_name,field_name):
             else:
                 break
             idx += 1
-        #if Place API JSON isn't found, use the address to look it up
-        try:
-            fields['Place API JSON']
-        except (KeyError):
-            place_json = getPlaceJson(urllib.parse.quote_plus(address))
-            if place_json:
-                # fields['Place API JSON'] = place_json
-                print('Updating %s place json: %s' % (fields[field_name], str(place_json)))
-                table.update(record['id'],
-                            {'Place API JSON': str(place_json)}
-                            )
-            else:
-                break
+        # #if Place API JSON isn't found, use the address to look it up
+        # try:
+        #     fields['Place API JSON']
+        # except (KeyError):
+        #     print("Looking up %s" %(fields[field_name]))
+        #     place_json = getPlaceJson(urllib.parse.quote_plus(address))
+        #     if place_json:
+        #         # fields['Place API JSON'] = place_json
+        #         print('Updating %s place json: %s' % (fields[field_name], str(place_json)))
+        #         table.update(record['id'],
+        #                     {'Place API JSON': str(place_json)}
+        #                     )
+        #     else:
+        #         break
         if idx > test_count:
             break
 
@@ -127,8 +149,6 @@ def main():
     parser.add_argument("--Field", type=str, help="The name of the primary field in the Airtable table")
 
     args = parser.parse_args()
-
-    print(args.Base)
 
     if args.Base and args.Table:
         base_name = args.Base
