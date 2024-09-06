@@ -107,12 +107,11 @@ for record in table.records:
     if location_type in ['Dinner', 'Lunch', 'Breakfast/Coffee', 'Dining', 'Restaurant']:
         group = dining
         try:
-            features = fields['Features']
-            # Find all strings that contain the substring
-            if [s for s in features if "Gluten" in s]:
+            #Look for Gluten in the Features array
+            if [s for s in fields['Features'] if "Gluten" in s]:
                 icon = icon_map['GF Restaurant']
         except (KeyError):
-            continue
+            pass
         icon_color = 'red'
     if location_type in ['Bars', 'Winery', 'Brewery']:
         group = drinks
