@@ -33,6 +33,7 @@ icon_map = {
     "Dessert": ['ice-cream'],
     "Dining": ['utensils'],
     "Restaurant": ['utensils'],
+    "GF Restaurant": ['wheat-awn-circle-exclamation'],
     "Drinks": ['martini-glass'],
     "Bars": ['martini-glass'],
     "Bar": ['martini-glass'],
@@ -61,6 +62,7 @@ for record in table.records:
     # location = geolocator.geocode(fields['Address'])
     name = fields[field_name]
     location_type = fields['Type'] # Example type
+
     # Step 4: Add a marker with a custom icon and a link
     try:
         icon = icon_map[location_type]
@@ -104,6 +106,13 @@ for record in table.records:
         icon_color = 'blue'
     if location_type in ['Dinner', 'Lunch', 'Breakfast/Coffee', 'Dining', 'Restaurant']:
         group = dining
+        try:
+            features = fields['Features']
+            # Find all strings that contain the substring
+            if [s for s in features if "Gluten" in s]:
+                icon = icon_map['GF Restaurant']
+        except (KeyError):
+            continue
         icon_color = 'red'
     if location_type in ['Bars', 'Winery', 'Brewery']:
         group = drinks
