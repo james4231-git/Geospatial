@@ -1,17 +1,13 @@
-from pyairtable import Api
 import requests
 import json
 import urllib.parse
-import argparse
+from airtable_class import Table, get_parser
 
 debug = False
 test_count = 20
 
 with open('../my_credentials.json') as f:
     credentials = json.loads(f.read())
-
-# baseId = credentials['base']
-key = credentials["key"]
 Google_API_key = credentials['Google_API_Key']
 
 def getPlaceJson(description):
@@ -38,13 +34,12 @@ def getPlaceJson(description):
             print(candidate)
         return None
 
-def process_table(base,table_name,field_name):
-    table = base.table(table_name)
-    records = table.all()
+def process_table(table,field_name):
 
     idx = 0
-    for record in records:
-        fields = record['fields']
+    for record in table.records:
+
+        fields = record.fields
 
         if debug:
             print("Processing %s" %(fields[field_name]))
@@ -100,7 +95,7 @@ def process_table(base,table_name,field_name):
                 coordinates = ('%s, %s' % (latitude, longitude))
                 # print('Updating %s address: %s' % (fields['Item'], address))
                 print('Updating %s address: %s' % (fields[field_name], coordinates))
-                table.update(record['id'],
+                record.update(
                             {
                                 'Place API JSON': str(place_json),
                                 'Address': address,
@@ -108,22 +103,9 @@ def process_table(base,table_name,field_name):
                             }
                         )
             else:
+                print(record.get_url())
                 break
             idx += 1
-        # #if Place API JSON isn't found, use the address to look it up
-        # try:
-        #     fields['Place API JSON']
-        # except (KeyError):
-        #     print("Looking up %s" %(fields[field_name]))
-        #     place_json = getPlaceJson(urllib.parse.quote_plus(address))
-        #     if place_json:
-        #         # fields['Place API JSON'] = place_json
-        #         print('Updating %s place json: %s' % (fields[field_name], str(place_json)))
-        #         table.update(record['id'],
-        #                     {'Place API JSON': str(place_json)}
-        #                     )
-        #     else:
-        #         break
         if idx > test_count:
             break
 
@@ -139,15 +121,7 @@ def main():
     base_name= 'Travel'  # "James' Cheat Sheet"
     table_name = 'Vancouver & Banff'
     field_name = 'Item'
-
-    # Initialize the argument parser
-    parser = argparse.ArgumentParser(description="Retrieve records from a specified Airtable base and table.")
-
-    # Adding optional arguments with default values defined in the entry point
-    parser.add_argument("--Base", type=str, help="The name of the Airtable base")
-    parser.add_argument("--Table", type=str, help="The name of the table in the Airtable base")
-    parser.add_argument("--Field", type=str, help="The name of the primary field in the Airtable table")
-
+    parser = get_parser()
     args = parser.parse_args()
 
     if args.Base and args.Table:
@@ -155,11 +129,8 @@ def main():
         table_name = args.Table
         field_name = args.Field
 
-    api = Api(key)
-    bases = api.bases()
-    baseId = get_base_id_by_name(bases, base_name)
-    base = api.base(baseId)
-    process_table(base, table_name, field_name)
+    table = Table(base_name,table_name)
+    process_table(table, field_name)
 
 if __name__ == "__main__":
     main()

@@ -1,28 +1,22 @@
 import folium
-# from geopy.geocoders import Nominatim
 import webbrowser
 import os
-import time
 
-import json
-from pyairtable import Api
+from airtable_class import Table, get_parser
 
-with open('../my_credentials.json') as f:
-    credentials = json.loads(f.read())
-
-baseId = credentials['base']
-key = credentials["key"]
-
-# base = Airtable(baseId, key)
-# places = base.get('Vancouver and Banff')
-api = Api(key)
-base = api.base(baseId)
-table = base.table('Vancouver & Banff')
+base_name= 'Travel'  # "James' Cheat Sheet"
+table_name = 'Vancouver & Banff'
 field_name = 'Item'
-# base = api.base('appcwp93vMIxZ6It8')
-# table = base.table('Ideas')
-# field_name = 'Name'
-records = table.all()
+
+parser = get_parser()
+args = parser.parse_args()
+
+if args.Base and args.Table:
+    base_name = args.Base
+    table_name = args.Table
+    field_name = args.Field
+
+table = Table(base_name,table_name)
 
 icon_map = {
     "Lodging": ['bed'],
@@ -50,8 +44,6 @@ icon_map = {
     "Generic": ['location-dot']
 }
 
-# geolocator = Nominatim(user_agent="airtable_to_folium")
-
 # Step 2: Create a map centered at the location
 map_ = folium.Map(location=[50.65453570942645, -120.30424611826452], zoom_start=7)
 
@@ -61,9 +53,9 @@ drinks = folium.FeatureGroup(name='Drinks')
 activities = folium.FeatureGroup(name='Activities')
 travel = folium.FeatureGroup(name='Travel')
 
-for record in records:
+for record in table.records:
 
-    fields = record['fields']
+    fields = record.fields
 
     # Step 1: Geocode the address to get latitude and longitude
     # location = geolocator.geocode(fields['Address'])
@@ -110,7 +102,7 @@ for record in records:
     if location_type in ['Activity', 'Attraction', 'Things To Do','Hiking']:
         group = activities
         icon_color = 'blue'
-    if location_type in ['Dinner', 'Lunch', 'Breakfast/Coffee', 'Dining']:
+    if location_type in ['Dinner', 'Lunch', 'Breakfast/Coffee', 'Dining', 'Restaurant']:
         group = dining
         icon_color = 'red'
     if location_type in ['Bars', 'Winery', 'Brewery']:
